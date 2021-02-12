@@ -5,7 +5,7 @@ file = '../Resources/input.txt'
 with open(file, 'r') as text:
 
     # This stores a reference to a file stream
-    print(text)
+    #print(text)
 
     # Store all of the text inside a variable called "lines"
     lines = text.read()

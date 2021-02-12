@@ -12,7 +12,13 @@ pie_list = ["Pecan", "Apple Crisp", "Bean", "Banoffee", "Black Bun",
 print("Welcome to the House of Pies! Here are our pies:")
 
 # While we are still shopping...
-# Loop starts here
+while shopping == "y"
+    print(f(str(i) {pie_list})
+
+
+
+
+
 
 
 

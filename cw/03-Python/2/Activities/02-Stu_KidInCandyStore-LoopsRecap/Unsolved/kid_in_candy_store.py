@@ -1,5 +1,15 @@
 # The list of candies to print to the screen
-candy_list = ["Snickers", "Kit Kat", "Sour Patch Kids", "Juicy Fruit", "Swedish Fish", "Skittles", "Hershey Bar", "Starbursts", "M&Ms"]
+candy_list = [
+    "Snickers", 
+    "Kit Kat", 
+    "Sour Patch Kids", 
+    "Juicy Fruit", 
+    "Swedish Fish", 
+    "Skittles", 
+    "Hershey Bar", 
+    "Starbursts", 
+    "M&Ms"
+    ]
 
 # The amount of candy the user will be allowed to choose
 allowance = 5
@@ -8,3 +18,17 @@ allowance = 5
 candy_cart = []
 
 # Print out options
+for i in range(len(candy_list)):
+    print(f("[" str(i) {candy_list}))
+
+    answer = "yes":
+
+while answer == "yes":
+
+    print("which candy will you like to bring home")
+    selected = input("input the number of candy you want: ")
+
+    candy_cart.append(candy_list[int(selected)])
+
+                       
+

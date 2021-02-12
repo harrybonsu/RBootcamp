@@ -13,5 +13,13 @@ length = []
 
 # Use encoding for Windows
 # with open(udemy_csv, newline='', encoding='utf-8') as csvfile:
+with open(udemy_csv, newline='', encoding='utf-8') as csvfile:
+    csvreader = csv.reader(csvfile, delimiter=",")
+    for row in csvreader:
+
+        title.append(row[1])
+
+
+
 # OR below one for MAC
 # with open(udemy_csv, newline='') as csvfile:
