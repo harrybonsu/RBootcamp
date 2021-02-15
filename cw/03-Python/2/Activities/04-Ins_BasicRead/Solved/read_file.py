@@ -12,3 +12,5 @@ with open(file, 'r') as text:
 
     # Print the contents of the text file
     print(lines)
+
+

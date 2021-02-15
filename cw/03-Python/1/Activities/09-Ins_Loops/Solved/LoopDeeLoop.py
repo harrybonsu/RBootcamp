@@ -24,9 +24,18 @@ for animal in zoo:
 
 print("----------------------------------------")
 
+cars = ["toyota", "ford", "dodge", "fiat", "Scion"]
+print(cars)
+
+cars.append("Chevrolet")
+print(cars)
+    
+cars.pop(0)
+
 # Loop while a condition is being met
 run = "y"
 
 while run == "y":
     print("Hi!")
     run = input("To run again. Enter 'y': ")
+

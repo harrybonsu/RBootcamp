@@ -9,7 +9,7 @@ candy_list = [
     "Hershey Bar", 
     "Starbursts", 
     "M&Ms"
-    ]
+]
 
 # The amount of candy the user will be allowed to choose
 allowance = 5
@@ -18,17 +18,23 @@ allowance = 5
 candy_cart = []
 
 # Print out options
-for i in range(len(candy_list)):
-    print(f("[" str(i) {candy_list}))
 
-    answer = "yes":
-
-while answer == "yes":
-
-    print("which candy will you like to bring home")
-    selected = input("input the number of candy you want: ")
-
-    candy_cart.append(candy_list[int(selected)])
+    #candy_cart.append(candy_list[int(selected)])
 
                        
+i = 0
+for candy in candy_list:
+    print("[" + str(i) + "] " + candy)
 
+    i = i + 1
+
+want_more = "yes"
+while want_more == "yes" and len(candy_cart) <5:
+
+    selected_item = int(input("Pick a number: "))
+
+    candy_cart.append(candy_list[selected_item])
+
+    want_more = input("Do you want more candies?")
+  
+print(f"I brought home with me {candy_cart}")  

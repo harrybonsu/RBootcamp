@@ -1,15 +1,16 @@
 # Take input of you and your neighbor
-name = "Harry"
-neighbor_name = "Jerry"
+your_name = input("what is your name?")
+neighbor_name = input("what is your neighbor's name?")
 
 # Take how long each of you have been coding
-my_coding_months = 2
-neighbor_coding_months = 3
+your_coding_months = int(input("how many months have you been coding?"))
+neighbor_coding_months = int(input("how many month have your neighbor been coding?"))
 
 # Add total month
-total_months = int(my_coding_months) + int(neighbor_coding_months)
+total_months = your_coding_months+neighbor_coding_months
 
 # Print results
 
-print(f"I am " {name} "and my neigbor is " {neighbor_name})
-print(f"together we have been coding for " {total_months})
+print("your name is " + your_name)
+print("your neigbor's name is " + neighbor_name)
+print(f"together you have been coding for: {total_months} months")
