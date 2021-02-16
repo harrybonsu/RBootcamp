@@ -63,3 +63,10 @@ print(squared)
 # You can also just print the return value of a function
 print(square(2))
 print(square(3))
+
+#numbers = 0
+def total(number):
+    tot = sum(number)
+    return  tot
+
+print(sum([2, 3, 4, 6]))

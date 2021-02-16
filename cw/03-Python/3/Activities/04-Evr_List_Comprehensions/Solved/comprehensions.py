@@ -4,13 +4,16 @@ fish = "halibut"
 # and push to an array
 letters = []
 
+for letter in fish:
+    letters.append(letter)
 
 print(letters)
 
 # List comprehensions provide concise syntax for creating lists
 
+# List comprehensions provide concise syntax for creating lists
 
-print(letters)
+#print(letters)
 
 # We can manipulate each element as we go
 capital_letters = []
@@ -19,7 +22,10 @@ for letter in fish:
 
 print(capital_letters)
 
+
 # List Comprehension for the above
+
+capital_letters = [letter.upper() for letter in fish]
 
 print(capital_letters)
 
@@ -32,5 +38,15 @@ for temperature in july_temperatures:
 print(hot_days)
 
 # List Comprehension with conditional
+warm_days = []
 
-print(hot_days)
+warm_days = [temperature for temperature in july_temperatures if temperature < 90]
+print(warm_days)
+
+
+months =["jan", "feb", "mar", "april"]
+
+long_month_spelling = []
+
+long_month_spelling = [month for month in months if len(month) >=4]
+print(long_month_spelling)

@@ -3,13 +3,13 @@ import csv
 
 cereal_csv = os.path.join("..", "Resources", "cereal.csv")
 
-# Open and read csv
-with open(cereal_csv) as csv_file:
-    csv_reader = csv.reader(csv_file, delimiter=",")
+with open(cereal_csv) as csvfile:
+    csvReader = csv.reader(csvfile, delimiter=',')
+    # print(csvReader)
 
-    csv_header = next(csv_file)
-    print("Header: " + csv_header)
+    csv_header = next(csvfile)
+    print(csv_header)
 
-    for row in csv_reader:
+    for row in csvReader:
         if float(row[7]) >= 5:
             print(row)
