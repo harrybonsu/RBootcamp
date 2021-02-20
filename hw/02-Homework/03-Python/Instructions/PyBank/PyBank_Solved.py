@@ -14,7 +14,7 @@ with open(PyBank, newline="", encoding="utf-") as budget_data:
 # skip header to iterate through the values
     header = next(csvreader)
 
-# appending total months and profit/loss to their lists  
+# appending total months and total profit/loss to their lists  
     for row in csvreader:
         Tot_months.append(row[0])
         Tot_PL.append(int(row[1]))
@@ -34,18 +34,32 @@ greatest_dec_PL = min(Monthly_Change)
 greatest_inc_month = Monthly_Change.index(max(Monthly_Change)) + 1
 greatest_dec_month = Monthly_Change.index(min(Monthly_Change)) + 1 
 
-#print(greatest_inc_month)
+# print results
+
+print("Financial Analysis")
+print("----------------------------------------")
+print(f"Total Months: {len(Tot_months)}")
+print(f"Total: ${sum(Tot_PL)}")
+print(f"Average Change: {round(sum(Monthly_Change)/len(Monthly_Change),2)}")
+print(f"Greatest Increase in Profits: {Tot_months[greatest_inc_month]} (${(str(greatest_inc_PL))})")
+print(f"Greatest Decrease in Profits: {Tot_months[greatest_dec_month]} (${(str(greatest_dec_PL))})")
 
 
+# Create Output Files
+output_file = os.path.join("..","PyBank","Fiancial_Analysis.txt")
 
+with open(output_file, "w") as file:
 
-
-
-    
-# Assign values to variables   
-#Tot_months = str(budget_data[0])
-#Total = int(budget_data[1])
-#Av_change = int(budget_data[2])
-#Gr_inc_Profits = int(budget_data[3])
-#Gr_dec_Profits = int(budget_data[3])
-
+    file.write("Financial Analysis")
+    file.write("\n")
+    file.write("-------------------")
+    file.write("\n")
+    file.write(f"Total Months: {len(Tot_months)}")
+    file.write("\n")
+    file.write(f"Total: ${sum(Tot_PL)}")
+    file.write("\n")
+    file.write(f"Average Change: {round(sum(Monthly_Change)/len(Monthly_Change),2)}")
+    file.write("\n")
+    file.write(f"Greatest Increase in Profits: {Tot_months[greatest_inc_month]} (${(str(greatest_inc_PL))})")
+    file.write("\n")
+    file.write(f"Greatest Decrease in Profits: {Tot_months[greatest_dec_month]} (${(str(greatest_dec_PL))})")
