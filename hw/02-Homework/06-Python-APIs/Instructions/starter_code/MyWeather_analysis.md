@@ -1,4 +1,4 @@
-For Part I, you must include a written description of three observable trends based on the data.
+## Written description of observable trends based on the data.
 
 1. From the data, it can be observed that as one moves away in either direction from the equator, the temperature begins to drop. 
 
