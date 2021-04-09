@@ -1,0 +1,26 @@
+h1 {
+    color:blue;
+}
+
+.purple {
+    color: purple;
+}
+
+#purple {
+    color: purple;
+}
+
+.red {
+    color: red;
+}
+.make_me_bold {
+    font-weight:500;
+}
+
+body { background-image: linear-gradient(color, color); }
+html {
+  height: 100%;
+  }
+  body {
+  background-image: linear-gradient(#FFFFFF, rgb(89, 155, 255));
+  }
