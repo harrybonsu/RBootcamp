@@ -17,10 +17,11 @@ h1 {
     font-weight:500;
 }
 
+#background_black { background-color: black;}
 body { background-image: linear-gradient(color, color); }
 html {
   height: 100%;
   }
   body {
-  background-image: linear-gradient(#FFFFFF, rgb(89, 155, 255));
+  background-image: linear-gradient(#d1a6a6, rgb(89, 155, 255));
   }
