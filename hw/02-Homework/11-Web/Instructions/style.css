@@ -3,6 +3,11 @@ html {
   height: 100%;
 }
 
+col-md-4 sidebar h2 {
+  color: aquamarine;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
 .box {
     height: 400px;
     padding: 20px;
