@@ -10,53 +10,84 @@
 <body>
     
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Latitude</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-    
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Plots
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="Resources/assets/images/Fig1.png">City Latitude vs. Max Temperature</a>
-                    <a class="dropdown-item" href="Resources/assets/images/Fig2.png">City Latitude vs. Humidity</a>
-                    <a class="dropdown-item" href="Resources/assets/images/Fig3.png">City Latitude vs. Cloudiness</a>
-                    <a class="dropdown-item" href="Resources/assets/images/Fig4.png">City Latitude vs. Wind Speed</a>
-                    </div>
-                </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Comparison</a>
+
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Latitude</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Plots
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="Resources/assets/images/Fig1.png">Max Temperature</a>
+                        <a class="dropdown-item" href="Resources/assets/images/Fig2.png">Humidity</a>
+                        <a class="dropdown-item" href="Resources/assets/images/Fig3.png">Cloudiness</a>
+                        <a class="dropdown-item" href="Resources/assets/images/Fig4.png">Wind Speed</a>
+                        </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Data</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Comparison</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Data</a>
+                        </li>
                     </li>
-                </li>
+                
+                
+                </ul>
             
-            
-            </ul>
-          
-        </div>
+            </div>
     </nav>
     <div class="container">
-
         <div class="row">
-            <div class="col-md-6">
-              <div class="box">
-                <h1>Summary: Latitude vs. X</h1>
+         <div class="col-md-1"></div>  
+           <div class="col-md-6">
+          <h1>Summary: Latitude vs. X</h1>
+            <img src="Resources/assets/images/Fig1.png" width="300px" height="250px">
+            <p>The purpose of this project was to analysis how weather patterns may change and alter as one travels closer to the equator. An Open Weather API and the CitiPy Python Library to randomly pull 500 cities from around the world was to create the dataset. 
+                </br>
+                </br>After assembling the data, Pandas and Matplotlib Python libraries were used to analyze the data set. The four dependent variables were: Max Temperature, Humidity, Cloudiness, and Wind Speed. This dashboard shows the source data and the visualizations based on the four dependent variables.
+            </p>
+            <p></p> 
+         </div>    
+           <div class="col-md-4 sidebar">
+            <div class="row">
+              <div class="col-md-12">
+                <h1>Visualizations</h1>
               </div>
             </div>
-
-            <div class="col-md-6">
-              <div class="box">
-                <h1>Visualization</h1>
-              </div>
-            </div>
-        </div>
+           <div class="row">
     
+              <div class="col-md-3">    
+                   <a href="max_temp.html"><img src="Resources/assets/images/Fig1.png" width="200px" height="150px"></a>
+              </div>
+              <div class="col-md-3"></div>
+            
+              <div class="col-md-3">  
+                   <a href="humidity.html"><img src="Resources/assets/images/Fig2.png" width="200px" height="150px"></a>
+              </div>
+              <div class="col-md-3"></div>  
+           </div>   
+           <div class ="row"> 
+              
+              <div class="col-md-3">  
+                <a href="cloudiness.html"><img src="Resources/assets/images/Fig3.png" width="200px" height="150px"></a>
+              </div>
+              <div class="col-md-3"></div>
+    
+              <div class="col-md-3">     
+                <a href="wind_speed.html"><img src="Resources/assets/images/Fig4.png" width="200px" height="150px"></a>
+              </div>
+              <div class="col-md-3"></div>
+            </div>    
+         </div>         
+        <div class="col-md-1"></div>
+      </div>      
     </div>
 
 
