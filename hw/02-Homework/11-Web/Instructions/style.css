@@ -15,3 +15,6 @@ col-md-4 sidebar h2 {
     background: deepskyblue;
 
 }
+.navbar-brand {
+  border-color: aquamarine;
+}
