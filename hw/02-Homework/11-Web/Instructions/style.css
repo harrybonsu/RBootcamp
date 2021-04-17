@@ -2,7 +2,20 @@ h2 {
   color: rgb(10, 134, 128);
   size: 20px;
 }
-body { background-color: lightgray;
+
+.navbar-brand {
+  
+  padding-left: 20px;
+  background: rgb(16, 201, 191);
+}
+
+
+
+
+
+
+
+body { background-color: rgb(228, 226, 226);
 html {
   height: 100%;
 }
