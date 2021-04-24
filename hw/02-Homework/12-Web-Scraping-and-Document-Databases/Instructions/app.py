@@ -17,8 +17,6 @@ def index():
     
 @app.route("/scrape")
 def scraper():
-    # listings = mongo.db.listings
-    # listings_data = scrape_craigslist.scrape()
     
     mars = mongo.db.mars
     mars_web = scrape_mars.scrape_news()

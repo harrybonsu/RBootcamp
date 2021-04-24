@@ -103,7 +103,7 @@ def scrape_marsHemi3():
     browser.visit(url)
     html=browser.html
     soup = bs(html, 'html.parser')
-    syrtis_major_url = (soup.find_all('div', class_='downloads').ul.li.a['href'])
+    syrtis_major_url = soup.find_all('div', class_='downloads').ul.li.a['href']
     hemisphere_image_urls.append([{"title": "Syrtis Major Hemisphere", "img_url": syrtis_major_url}])
 
     browser.quit()
