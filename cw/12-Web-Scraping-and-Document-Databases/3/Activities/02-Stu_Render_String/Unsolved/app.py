@@ -5,14 +5,14 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 # Set variables
-name = "Harry Bonsu"
-hobby = "Watching soccer games"
+name = "Harry"
+hobby = "Soccer"
 
 
 # create route that renders index.html template
 @app.route("/")
-def info():
-    return render_template("index.html", name=name, hobby=hobby)
+def homepage():
+    return render_template("index.html", name =name, hobby=hobby)
 
 
 

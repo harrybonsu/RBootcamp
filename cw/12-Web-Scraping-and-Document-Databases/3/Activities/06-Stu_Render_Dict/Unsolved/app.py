@@ -12,9 +12,8 @@ dogs = [{"name": "Fido", "type": "Lab"},
 
 
 # create route that renders index.html template
-@app.route("/")
-def index():
-        return render_template("index.html", dog_list=dogs)
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)
