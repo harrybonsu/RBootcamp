@@ -3,7 +3,7 @@ var tableData = data;
 //console.log(tableData);
 
 // Selecting the table body
-var tbody = d3.select("table")
+var tbody = d3.select("tbody")
 tbody.attr("table table-striped")
 
 // Looping Through `data` and appending a table to the web page with new 
@@ -17,7 +17,6 @@ tableData.forEach(function(ufoSightings) {
     var cell = row.append('td');
     cell.text(value);
     
-
     });
 });
 
@@ -26,9 +25,6 @@ tableData.forEach(function(ufoSightings) {
 
 // Select the button
 var button = d3.select("#filter-btn");
-
-// Select the input element
-var inputField = d3.select("#datetime");
 
 // Select the form
 var form = d3.select("form")
@@ -48,14 +44,10 @@ function runEnter() {
 
     // Get the value property of the input element
     var inputValue = inputField.property("value");
-
     console.log(inputValue)
 
     var filteredData = tableData.filter(sightings => sightings.datetime === inputValue);
-
     console.log(filteredData)
-
-    
 
 }
 
