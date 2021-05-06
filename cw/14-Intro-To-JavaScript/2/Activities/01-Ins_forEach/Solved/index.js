@@ -20,3 +20,13 @@ students.forEach(printName);
 students.forEach(function(name) {
   console.log(name);
 });
+
+var people = ['matt', 'mark', 'luke', 'john']
+
+function listLoop(men) {
+  console.log(men)
+}
+
+people.forEach(function(men) {
+  console.log(men);
+})

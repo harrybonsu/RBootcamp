@@ -7,15 +7,19 @@ var movie = {
   };
   
   // JavaScript also allows value lookup via dot notation
-
+  console.log(movie.name)
+  console.log(movie.sequels)
   
   // JS also allows value lookup via bracket notation--note the similarity to Python
-  // console.log(movie["name"]);
+  console.log(movie["name"]);
   
   // Add a key-value pair to an existing object
-
+  movie.creator = "Disney"
+  console.log(movie.creator)
   
   // Delete a key-value pair
+  delete movie.creator
+  console.log(movie);
 
   
   // Check whether a key exists in an object
@@ -31,14 +35,15 @@ var movie = {
   };
   
   // Display the entire object, both keys and values
-
+  console.log(people)
   
   // Display only the keys of the object
+  console.log(Object.keys(people))
 
-  
   // Display only the values of the object
-
+  console.log(Object.values(people))
   
   // Display a key-value pair held in an array
+  console.log(Object.entries(people))
 
   

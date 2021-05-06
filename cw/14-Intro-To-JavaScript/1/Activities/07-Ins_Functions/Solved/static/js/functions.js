@@ -39,3 +39,12 @@ console.log(doubleAddition(3, 4));
 var longDecimal = 112.34534454;
 var roundedDecimal = Math.floor(longDecimal);
 console.log(roundedDecimal);
+
+function loopThru(anyList) {
+  for (j=0; j<anyList.length; j++) {
+    console.log(anyList[j]);
+  }
+}
+
+var myList = ['matt', 'mark', 'luke', 'john']
+loopThru(myList);

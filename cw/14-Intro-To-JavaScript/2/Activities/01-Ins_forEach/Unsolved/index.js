@@ -5,3 +5,14 @@ var students = ["Johnny", "Tyler", "Bodhi", "Pappas"];
 function printName(name) {
   console.log(name);
 }
+
+for (var i = 0; i<students.length; i++)
+  printName(students[i])
+
+// forEach loop
+students.forEach(printName)
+
+// anonymous function
+students.forEach(function (name) {
+  console.log(name);
+});

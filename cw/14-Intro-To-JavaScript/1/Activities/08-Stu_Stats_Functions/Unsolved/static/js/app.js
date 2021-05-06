@@ -9,4 +9,4 @@ function mean(arr) {
 
     return meanValue
 }
-console.log(`fhfhdhdsad segdfh ${mean(movieScore)}`)
+console.log(mean(movieScore));

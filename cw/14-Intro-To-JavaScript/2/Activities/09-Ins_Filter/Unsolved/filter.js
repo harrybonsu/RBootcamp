@@ -18,8 +18,12 @@ var simpsons = [{
   }];
   
 // Create a custom filtering function
-
+function youngplayer(person) {
+  return person.age < 30;
+}
 
 // filter() uses the custom function as its argument
 
+var youngSimpsons = simpsons.filter(youngplayer);
 
+console.log(youngSimpsons)

@@ -15,7 +15,24 @@ var dishes = [];
 var spices = [];
 
 // Iterate through each recipe object
+recipes.forEach((recipe)=> {
+  Object.entries(recipe).forEach(([k,v]) => {
 
+if (k ==='dish') {
+    dishes.push(v);
+}
+else {
+    spices.push(v);
+    }
+  });
+});
+
+console.log(dishes);
+console.log(spices);
 
 // BONUS - Use map to build both arrays of dish and spice values
+var dishlist = recipes.map(var1 => var1.dish)
+var spicelist = recipes.map(var2 => var2.spice)
 
+console.log(dishlist);
+console.log(spicelist);

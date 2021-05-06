@@ -10,14 +10,25 @@ var students = [
 // An Arrow function is a new concise syntax for function
 // Arrow functions allow us to drop the `function` keyword and just show the parameters.
 // Note: The fat arrow `=>` that was added to indicate an arrow function.
+ex1 = theStagesOfJS.map(function (item) {
+  return item
+});
+console.log(ex1)
 
-
+ex2 = theStagesOfJS.map((item)=> {
+  return item
+});
+console.log(ex2)
 // We can drop the parentheses around the parameter if there's only one of them,
 // but if we include the return keyword we must surround the return statement with curly braces.
-
+ex3 = theStagesOfJS.map(item => {return item});
+console.log(ex3)
 
 // And finally, we can just drop the `return` keyword. The return is implied.
-
+var ex4 = theStagesOfJS.map((item, index)=>{
+  return `item is ${item} and index number is ${index}`
+});
+console.log(ex4)
 
 // Functions with more than one parameter still need the parenthesis
 
@@ -41,8 +52,9 @@ var princesses = [
 
 // log the name of each princess, follow by a colon, followed by their age
 // forEach: executes a provided function once for each array element
-
+princesses.forEach(princesses => console.log(`${princesses.name}:${princesses.age}`))
 
 // create an array of just the names from the princesses array
 // map: creates a new array with the results of calling a provided function on every element in the calling array
-
+var all_names = princesses.map(princesses=>princesses.name);
+console.log(all_names)

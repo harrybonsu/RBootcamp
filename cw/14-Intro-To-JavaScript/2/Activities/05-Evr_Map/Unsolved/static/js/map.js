@@ -11,6 +11,13 @@ var princesses = [
 
 // Log the name of each princess, follow by a colon, followed by their age
 // Hint: use forEach
-
+princesses.forEach(function (info, index) {
+  console.log(index+1, info)
+})
 // Create an array of just the names from the princesses array
 // Hint: use map
+
+var PrincessesNames = princesses.map(function (princess) {
+    return(princess.name)
+})
+console.log(PrincessesNames)
