@@ -12,7 +12,7 @@ form.on("submit",runEnter);
 function runEnter() {
 
   // Prevent the page from refreshing
-  d3.event.preventDefault();
+  //d3.event.preventDefault();
 
   // Select the input element and get the raw HTML node
   var inputElement = d3.select("#example-form-input");

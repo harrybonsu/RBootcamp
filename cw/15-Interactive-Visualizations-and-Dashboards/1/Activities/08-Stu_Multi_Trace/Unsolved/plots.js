@@ -7,7 +7,7 @@ var trace1 = {
   
   // Trace 2 for the Roman Data
   var trace2 = {
-
+    
   };
   
   // Combining both traces
