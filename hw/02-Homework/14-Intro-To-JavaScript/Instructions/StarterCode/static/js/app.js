@@ -1,8 +1,8 @@
 // from data.js
 var tableData = data;
-//console.log(tableData);
 
 // Selecting the table body
+var table = d3.select("table")
 var tbody = d3.select("tbody")
 tbody.attr("table table-striped")
 
@@ -12,7 +12,6 @@ tbody.attr("table table-striped")
 tableData.forEach(function(ufoSightings) {
     var row = tbody.append('tr')
     Object.entries(ufoSightings).forEach(function([key, value]) {
-    //console.log(key, value);
     var cell = row.append('td');
     cell.text(value);
 
@@ -28,9 +27,6 @@ var button = d3.select("#filter-btn");
 // Select the form
 var form = d3.select("form")
 
-// Select the reset button
-var resetbtn = d3.select("#reset-btn");
-
 // Create event handlers 
 button.on("click", runEnter);
 form.on("submit",runEnter);
@@ -41,32 +37,41 @@ function runEnter() {
     // Prevent the page from refreshing
     d3.event.preventDefault();
 
+    d3.select('tbody').remove();
+
+    table.append('tbody')
+    var tbody = d3.select('tbody')
+
     // Select the input element and get the raw HTML node
     var inputField = d3.select("#datetime");
 
     // Get the value property of the input element
     var inputValue = inputField.property("value");
-    console.log(inputValue)
 
-    var filteredData = tableData.filter(sightings => sightings.datetime === inputValue);
-    console.log(filteredData)
-   
-    filteredData.forEach(function(ufoSightings) {
-        //console.log(ufoSightings);
-        var row = tbody.append('tr')
-        Object.entries(ufoSightings).forEach(function([key, value]) {
-        //console.log(key, value);
-        var cell = row.append('td');
-        cell.text(value);
+    if (inputValue === "") {
+        tableData.forEach(function(ufoSightings) {
+            var row = tbody.append('tr')
+            Object.entries(ufoSightings).forEach(function([key, value]) {
+            var cell = row.append('td');
+            cell.text(value);
         
+            });
         });
-    });
+    }
+    else {
+        var filteredData = tableData.filter(sightings => sightings.datetime === inputValue);
+   
+        filteredData.forEach(function(ufoSightings) {
+            var row = tbody.append('tr')
+            Object.entries(ufoSightings).forEach(function([key, value]) {
+            var cell = row.append('td');
+            cell.text(value);
+            
+            });
+        });
+        };  
 }
 
-resetbtn.on("click", () => {
-    tbody.html("");
-    console.log("Table reset")
-});
 
 
 
