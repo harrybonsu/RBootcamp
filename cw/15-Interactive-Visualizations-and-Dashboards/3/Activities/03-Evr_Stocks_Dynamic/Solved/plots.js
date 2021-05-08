@@ -28,10 +28,10 @@ function handleSubmit() {
 }
 
 function buildPlot(stock) {
-  var apiKey = "YOUR KEY HERE";
+  var apiKey = "ehJQhTdnSHnV-Q9RK622";
 
   var url = `https://www.quandl.com/api/v3/datasets/WIKI/${stock}.json?start_date=2016-10-01&end_date=2017-10-01&api_key=${apiKey}`;
-
+  console.log(url)
   d3.json(url).then(function(data) {
     // Grab values from the response json object to build the plots
     var name = data.dataset.name;

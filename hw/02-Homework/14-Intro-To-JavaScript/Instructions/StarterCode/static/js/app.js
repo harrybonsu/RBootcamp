@@ -9,8 +9,6 @@ tbody.attr("table table-striped")
 // Looping Through `data` and appending a table to the web page with new 
 //rows of data for each UFO sighting.
 
-//var insertData = (dataInput) => {
-
 tableData.forEach(function(ufoSightings) {
     var row = tbody.append('tr')
     Object.entries(ufoSightings).forEach(function([key, value]) {
@@ -20,8 +18,6 @@ tableData.forEach(function(ufoSightings) {
 
     });
 });
-//}
-//insertData(tableData)
 
 // Using the date form to listen for events to search through the 'date/time' 
 // column for user input
@@ -44,7 +40,6 @@ function runEnter() {
 
     // Prevent the page from refreshing
     d3.event.preventDefault();
-    //tbody.remove()
 
     // Select the input element and get the raw HTML node
     var inputField = d3.select("#datetime");
@@ -67,15 +62,12 @@ function runEnter() {
         });
     });
 }
-/*document.getElementById(".form-control").reset();
+
 resetbtn.on("click", () => {
     tbody.html("");
-    
-    insertData(tableData)
     console.log("Table reset")
 });
 
 
-*/
 
 
