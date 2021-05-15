@@ -16,16 +16,14 @@ var trace1 = {
 };
 
 // Create the data array for our plot
-var data = [trace1];
+data = [trace1]
 
 // Define our plot layout
-var layOut = {
-  title: "Eye Flicker",
+var layout = {
+  title: 'Eye Color versus Eye Flickers',
   xaxis: {title: "Eye Color"},
-  yaxis: {title: "eyeFlicker"}
-
-};
-
-Plotly.newPlot("bar-plot", data, layOut)
+  yaxis: {title: "Eye Flickers"}
+}
 
 // Plot the chart to a div tag with id "bar-plot"
+Plotly.newPlot('bar-plot', data, layout);

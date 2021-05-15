@@ -7,34 +7,31 @@
 //  that returns the cities with a population increase greater than 15,000.
 
 function filterCities(city) {
-  return parseInt(city.Increase_from_2016) > 15000
     //Add your code
+    return parseInt(city.Increase_from_2016) > 15000
   }
   
   // 2. Use filter() to pass the function as its argument
-  var filteredCities = top15Cities.filter(filterCities);
-  
+ var cities = top15Cities.filter(filterCities)
   
   //  Check to make sure your filtered your cities.
-  console.log(filteredCities)
-
-  
+  console.log(cities);
   
   // 3. Use the map method with the arrow function to return all the filtered cities.
-  var cities = filteredCities.map(city => city.City)
+ var cityName = top15Cities.map(city => city.City);
  
   //  Check your filtered cities
-  console.log(cities)
+  console.log(cityName);
   
   // 4. Use the map method with the arrow function to return all the filtered cities population.
-  var population = filteredCities.map(city => city.population)
+  var population = top15Cities.map(city => city.population)
 
   //  Check the populations of your filtered cities
-  console.log(population)
+ console.log(population);
   
   // 5. Create your trace.
   var trace1 = {
-    x: cities,
+    x: cityName,
     y: population,
     type: "bar"
   },

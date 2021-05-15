@@ -1,27 +1,21 @@
 // Switch function
-function letter(alphabet) {
-    switch (alphabet) {
-        case "A":
-            console.log("1");
+function printInfo (infoName) {
+    switch (infoName) {
+        case "Harry":
+            console.log("Harry is great!!");
             break;
-        case "B":
-            console.log("2");
+        case "Mark":
+            console.log("Mark is great!!");
             break;
-        case "C":
-            console.log("3");
+        case "Peter":
+            console.log("Peter is great!!");
             break;
-        case "D":
-            console.log("4");
-            break;
-        case "E":
-            console.log("5");
+        case "John":
+            console.log("John is great!!");
             break;
         default:
-            console.log("0");
+            console.log('no match found');
     }
+}
 
-};
-
-letter("A");
-letter("B");
-
+printInfo('Peter')

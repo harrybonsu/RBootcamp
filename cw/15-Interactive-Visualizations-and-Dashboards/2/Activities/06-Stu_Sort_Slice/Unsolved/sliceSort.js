@@ -2,7 +2,8 @@
 numArray = [9.9, 6.1, 17.1, 22.7, 4.6, 8.7, 7.2];
 
 // Sort the array in descending order and assign the results to a variable
-
+var myArray = numArray.sort((a,b)=>b-a);
+console.log(myArray)
 
 // Print the results to the console
 
