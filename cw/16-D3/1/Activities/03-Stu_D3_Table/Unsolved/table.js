@@ -27,12 +27,13 @@ var austinWeather = [{
 
 //CODE GOES HERE
 d3.select('tbody')
-  .selectAll("tr")
+  .selectAll('tr')
   .data(austinWeather)
   .enter()
   .append('tr')
   .html(function (d) {
-    return `<td> ${d.date} </td> 
-            <td> ${d.low} </td> 
-            <td> ${d.high} </td>`
+    return `<td> ${d.date}</td> 
+            <td>${d.low}</td> 
+            <td>${d.high}</td>`
+
   });

@@ -11,3 +11,12 @@ var complexData = [{
     url: "https://media.giphy.com/media/TsxMkIKHpvFaU/giphy.gif"
   }
   ];
+
+  d3.select('.img-gallery').selectAll('div')
+    .data(complexData)
+    .enter()
+    .append('div')
+    .classed("col-md-4 thumbnail", true)
+    .html(function (d) {
+      return `<img src="${d.url}">`
+    });
