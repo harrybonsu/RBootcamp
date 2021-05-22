@@ -31,10 +31,14 @@ var chosenYAxis = "healthcare";
 
 // Load data data.csv
 d3.csv('./assets/data/data.csv').then(function (newsData) {
-    // console.log(newsData)
+    console.log(newsData)
     newsData.forEach(function (d) {
         d.healthcare = parseInt(d.healthcare)
         d.poverty = parseInt(d.poverty)
+        d.age = parseInt(d.age)
+        d.smokes = parseInt(d.smokes)
+        d.income = parseInt(d.income)
+        d.obesity = parseInt(d.obesity)
 
     });
     // Configure a band scale for the horizontal axis with a padding of 0.1 (10%)

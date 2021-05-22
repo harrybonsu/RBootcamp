@@ -1,22 +1,22 @@
-var complexData = [{
-    title: "javascript",
-    url: "https://media.giphy.com/media/10bdAP4IOmoN7G/giphy.gif"
-  },
-  {
-    title: "python",
-    url: "https://media.giphy.com/media/2yP1jNgjNAkvu/giphy.gif"
-  },
-  {
-    title: "css",
-    url: "https://media.giphy.com/media/TsxMkIKHpvFaU/giphy.gif"
-  }
-  ];
+var unirest = require("unirest");
 
-  d3.select('.img-gallery').selectAll('div')
-    .data(complexData)
-    .enter()
-    .append('div')
-    .classed("col-md-4 thumbnail", true)
-    .html(function (d) {
-      return `<img src="${d.url}">`
-    });
+var req = unirest("GET", "https://heisenbug-premier-league-live-scores-v1.p.rapidapi.com/api/premierleague");
+
+req.query({
+	"matchday": "1"
+});
+
+req.headers({
+	"x-rapidapi-key": "b31f7c49e2mshe4cd8cf100a2b61p14bf3djsn02de50c2e6c0",
+	"x-rapidapi-host": "heisenbug-premier-league-live-scores-v1.p.rapidapi.com",
+	"useQueryString": true
+});
+
+
+req.end(function (res) {
+	if (res.error) throw new Error(res.error);
+
+	console.log(res.body);
+});
+
+console.log(req)
