@@ -7,8 +7,8 @@ var svgHeight = 660;
 var chartMargin = {
   top: 30,
   right: 30,
-  bottom: 30,
-  left: 30
+  bottom: 60,
+  left: 60
 };
 
 // Define dimensions of the chart area
@@ -31,7 +31,7 @@ var chosenYAxis = "healthcare";
 
 // Load data data.csv
 d3.csv('./assets/data/data.csv').then(function (newsData) {
-    console.log(newsData)
+    // console.log(newsData)
     newsData.forEach(function (d) {
         d.healthcare = parseInt(d.healthcare)
         d.poverty = parseInt(d.poverty)
@@ -87,7 +87,26 @@ d3.csv('./assets/data/data.csv').then(function (newsData) {
         .attr("font-size", "10px")
         .text(function(d){return d.abbr});
 
+    // Create label for x-axis
 
+    var labelsGroup = chartGroup.append("g")
+    .attr("transform", `translate(${chartWidth / 2}, ${chartHeight + 20})`);
+
+    var povertyLabel = labelsGroup.append("text")
+    .attr("x", 0)
+    .attr("y", 20)
+    .attr("value", "poverty") // value to grab for event listener
+    .classed("active", true)
+    .text("In Poverty (%)");
+
+    // append y axis
+    chartGroup.append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("y", 0 - chartMargin.left)
+    .attr("x", 0 - (chartHeight / 2))
+    .attr("dy", "1em")
+    .classed("active", true)
+    .text("Lacks Healthcare (%)");
 
 }).catch(function (error) {
     console.log(error);
