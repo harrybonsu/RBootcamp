@@ -14,9 +14,19 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 }).addTo(myMap);
 
 // Create a red circle over Dallas
-
+// 
+L.circle([32.7767, -96.7970], {
+  color: "red",
+  fillColor: "red",
+  fillOpacity: 0.75,
+  radius: 50000
+}).addTo(myMap);
 
 // Connect a black line from NYC to Toronto
-
+L.polyline(
+  [[40.7128, -74.0060],
+  [43.6532, -79.3832]], 
+  {color: "black"}
+  ).addTo(myMap)
 
 // Create a purple polygon that covers the area in Atlanta, Savannah, Jacksonville and Montgomery

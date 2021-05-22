@@ -65,6 +65,11 @@ var countries = [
     name: "Sweden",
     location: [60.1282, 18.6435],
     points: 61
+  },
+  {
+    name: "Ghana",
+    location: [5.5560, -1.6244],
+    points: 14
   }
 ];
 
@@ -77,3 +82,23 @@ var countries = [
 
 
   // Adjust radius
+for (var i=0; i<countries.length; i++) {
+  var country = countries[i];
+
+  var countryColor = 'red'
+
+  if (country.points>200) 
+    {Color = 'yellow';}
+  else if (country.points>100)
+    {Color = 'blue';}
+  else if (country.points>90)
+    {Color = 'green';}
+  else {
+    Color = 'red';
+  }
+  L.circle(country.location, {radius: country.points * 1000, fillOpacity: 0.75, 
+    color: 'white', 
+    fillColor: Color})
+    .bindPopup("<h1>Country:" + country.name + "</h1><h2> Points: " + country.points + "</h2>")
+    .addTo(myMap);
+}

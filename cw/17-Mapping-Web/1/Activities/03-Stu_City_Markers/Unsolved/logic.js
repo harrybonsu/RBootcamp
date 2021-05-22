@@ -18,8 +18,29 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 
 // Add code to create a marker for each city below and add it to the map
 
-// newyork;
-// chicago;
-// houston;
-// la;
-// omaha;
+// newyork; 40.7128, -74.0060
+// chicago; 41.8781, -87.6298
+// houston; 29.7604, -95.3698
+// la; 34.0522, -118.2437
+// omaha; 41.2565, -95.9345
+
+var cities = [
+  {location: [40.7128, -74.0060], name: "New York", population: "8,100,000"}, 
+  {location: [40.7128, -74.0060], name: "Chicago", population: "7,100,000"}, 
+  {location: [41.8781, -87.6298], name: "Houston", population: "6,100,000"}, 
+  {location: [34.0522, -118.2437], name: "LA", population: "5,100,000"}, 
+  {location: [41.2565, -95.9345], name: "Omaha", population: "4,100,000"}
+]
+
+var marker = L.marker([45.52, -122.67], {
+  draggable: true,
+  title: "My First Marker"
+}).addTo(myMap);
+
+for (var i=0; i<cities.length; i++) {
+  city = cities[i];
+  
+  L.marker(city.location)
+  .bindPopup("City:" + city.name +" " + "Population:" + city.population)
+  .addTo(myMap)
+}

@@ -26,12 +26,22 @@ var chartGroup = svg.append("g")
 
 // Load data from hours-of-tv-watched.csv
 // YOUR CODE HERE
+  d3.csv("hours-of-tv-watched.csv").then(function (tvData) {
+   tvData.forEach(function (d) {
+     d.hours = parseInt(d.hours);
+   });
 
+
+
+   
+  })
   // Cast the hours value to a number for each piece of tvData
-
+  
 
   // Configure a band scale for the horizontal axis with a padding of 0.1 (10%)
-
+  var xBandScale = d3.scaleBand()
+  .domain(tvData.map(d=>d.hours))
+  .range([0, svgWidth]);
 
   // Create a linear scale for the vertical axis.
 
