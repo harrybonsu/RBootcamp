@@ -25,6 +25,10 @@ var svg = d3.select("#scatter")
 var chartGroup = svg.append("g")
   .attr("transform", `translate(${chartMargin.left}, ${chartMargin.top})`);
 
+//initial Parameters
+var chosenXAxis = "poverty";
+var chosenYAxis = "healthcare";
+
 // Load data data.csv
 d3.csv('./assets/data/data.csv').then(function (newsData) {
     console.log(newsData)
@@ -34,14 +38,16 @@ d3.csv('./assets/data/data.csv').then(function (newsData) {
 
     });
     // Configure a band scale for the horizontal axis with a padding of 0.1 (10%)
-    var xBandScale = d3.scaleBand()
-        .domain(newsData.map(d => d.poverty))
-        .range([0, chartWidth]);
+    var xBandScale = d3.scaleLinear()
+    .domain([d3.min(newsData, d => d[chosenXAxis]) * 0.8,
+        d3.max(newsData, d => d[chosenXAxis]) * 1.2])
+    .range([0, chartWidth]);
 
     // Create a linear scale for the vertical axis.
     var yLinearScale = d3.scaleLinear()
-        .domain([0, d3.max(newsData, d => d.healthcare)])
-        .range([chartHeight, 0]);
+    .domain([d3.min(newsData, d => d[chosenYAxis]) * 0.8,
+        d3.max(newsData, d => d[chosenYAxis]) * 1.2])
+    .range([chartHeight, 0]);
 
     // Create two new functions passing our scales in as arguments
     // These will be used to create the chart's axes
@@ -59,15 +65,29 @@ d3.csv('./assets/data/data.csv').then(function (newsData) {
 
     // Create one SVG rectangle per piece of tvData
     // Use the linear and band scales to position each rectangle within the chart
-    chartGroup.selectAll("#scatter")
+    circlesGroup = chartGroup.selectAll("circle")
         .data(newsData)
         .enter()
         .append("circle")
-        .attr("class", "stateCircle")
-        .attr("x", d => xBandScale(d.poverty))
-        .attr("y", d => yLinearScale(d.healthcare))
-        .attr("width", xBandScale.bandwidth())
-        .attr("height", d => chartHeight - yLinearScale(d.healthcare));
+        .classed("stateCircle", true)
+        .attr("cx", d => xBandScale(d[chosenXAxis]))
+        .attr("cy", d => yLinearScale(d[chosenYAxis]))
+        .attr("r", 14)
+        .attr("opacity", ".8");
+
+    //append initial text
+    chartGroup.selectAll(".stateText")
+        .data(newsData)
+        .enter()
+        .append("text")
+        .classed("stateText", true)
+        .attr("x", d => xBandScale(d[chosenXAxis]))
+        .attr("y", d => yLinearScale(d[chosenYAxis]))
+        .attr("dy", 3)
+        .attr("font-size", "10px")
+        .text(function(d){return d.abbr});
+
+
 
 }).catch(function (error) {
     console.log(error);
