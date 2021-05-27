@@ -19,7 +19,7 @@ L.circle([32.7767, -96.7970], {
   color: "red",
   fillColor: "red",
   fillOpacity: 0.75,
-  radius: 50000
+  radius: 150000
 }).addTo(myMap);
 
 // Connect a black line from NYC to Toronto
@@ -30,3 +30,14 @@ L.polyline(
   ).addTo(myMap)
 
 // Create a purple polygon that covers the area in Atlanta, Savannah, Jacksonville and Montgomery
+var GA = [
+  [33.7490, -84.3879],
+  [32.0761, -81.0883],
+  [30.3321, -81.6556],
+  [32.36681, -86.1645]]
+
+L.polygon(GA,
+  {color: 'blue',
+  fillColor: 'green',
+  fillOpacity: 0.75}
+  ).addTo(myMap);

@@ -91,37 +91,47 @@ for (var i = 0; i < locations.length; i++) {
   );
 }
 
-// Create base layers
+  // Create base layers
 
-// Streetmap Layer
-var streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
-  attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
-  tileSize: 512,
-  maxZoom: 18,
-  zoomOffset: -1,
-  id: "mapbox/streets-v11",
-  accessToken: API_KEY
-});
+  // Streetmap Layer
+  var streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
+    attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
+    tileSize: 512,
+    maxZoom: 18,
+    zoomOffset: -1,
+    id: "mapbox/streets-v11",
+    accessToken: API_KEY
+  });
 
-var darkmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
-  attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
-  maxZoom: 18,
-  id: "dark-v10",
-  accessToken: API_KEY
-});
+  var darkmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
+    attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
+    maxZoom: 18,
+    id: "dark-v10",
+    accessToken: API_KEY
+  });
 
-// Create two separate layer groups below. One for city markers, and one for states markers
+  // Create two separate layer groups below. One for city markers, and one for states markers
+  var stateLayer = L.layerGroup(stateMarkers)
+  var cityLayer = L.layerGroup(cityMarkers)
 
-// Create a baseMaps object to contain the streetmap and darkmap
+  // Create a baseMaps object to contain the streetmap and darkmap
+  var baseMaps = {
+    "Street Map": streetmap,
+    "Dark Map": darkmap
+  }
+  // Create an overlayMaps object here to contain the "State Population" and "City Population" layers
+  var overlayMaps = {
+    "State Population": stateLayer,
+    "City Population": cityLayer
+  }
+  // Modify the map so that it will have the streetmap, states, and cities layers
+  var myMap = L.map("map", {
+    center: [
+      37.09, -95.71
+    ],
+    zoom: 5,
+    layers: [streetmap, stateLayer, cityLayer]
+  });
 
-// Create an overlayMaps object here to contain the "State Population" and "City Population" layers
-
-// Modify the map so that it will have the streetmap, states, and cities layers
-L.map("map", {
-  center: [
-    37.09, -95.71
-  ],
-  zoom: 5
-});
-
-// Create a layer control, containing our baseMaps and overlayMaps, and add them to the map
+  // Create a layer control, containing our baseMaps and overlayMaps, and add them to the map
+  L.control.layers(baseMaps,overlayMaps, {collapsed: false}).addTo(myMap);
